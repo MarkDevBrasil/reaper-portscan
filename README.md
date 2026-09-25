@@ -28,7 +28,7 @@ O scanner utiliza `socket.connect_ex()` para tentar estabelecer uma conexão com
 ##  Como Usar
 
 ```bash
-git clone https://github.com/MarkDevBrasil/REAPER_PORT_SCAN.git
+git clone [https://github.com/MarkDevBrasil/reaper-portscan.git
 cd REAPER_PORT_SCAN
 python3 reaper.py
 ```
