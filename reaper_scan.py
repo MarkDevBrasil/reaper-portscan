@@ -29,12 +29,12 @@ def scan():
     portas = range(1, 65536)
 
     print("Iniciando o scan...")
-
+# With
     with ThreadPoolExecutor(max_workers=100) as executor:
         for porta in portas:
             executor.submit(scan_porta, alvo, porta)
 
     print("Scan finalizado.")
 
-
+# Iniciar o codigo
 scan()
