@@ -15,10 +15,6 @@ Um **scanner de portas TCP simples desenvolvido em Python**, utilizando a biblio
 
 O Reaper Port Scan verifica portas TCP de um endereço IPv4 informado pelo usuário.
 
-Portas atuais:
-
-```text
-21 • 22 • 80 • 443 • 3306 • 8080
 ```
 
 O scanner utiliza `socket.connect_ex()` para tentar estabelecer uma conexão com cada porta.
@@ -30,26 +26,7 @@ O scanner utiliza `socket.connect_ex()` para tentar estabelecer uma conexão com
 ```bash
 git clone [https://github.com/MarkDevBrasil/reaper-portscan.git
 cd REAPER_PORT_SCAN
-python3 reaper.py
-```
-
-Informe o IP:
-
-```text
-Digite o ip do alvo: 127.0.0.1
-```
-
-Exemplo:
-
-```text
-Iniciando o scan...
-
-A porta 21: FECHADA
-A porta 22: ABERTA
-A porta 80: ABERTA
-A porta 443: FECHADA
-A porta 3306: FECHADA
-A porta 8080: ABERTA
+python3 reaper_scan.py
 ```
 
 ---
