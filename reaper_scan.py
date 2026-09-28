@@ -8,6 +8,7 @@
 # Made By MarkDevBrasil
 # My GitHub: https://github.com/MarkDevBrasil
 
+# Serviços Pre-Configurados (Nome de portas especificas
 SERVICOS = {
     21: "FTP",
     22: "SSH",
@@ -24,7 +25,7 @@ SERVICOS = {
 }
 
 
-
+# Bibliotecas
 import socket
 from concurrent.futures import ThreadPoolExecutor
 
@@ -39,14 +40,14 @@ def scan_porta(alvo, porta):
         serviço = SERVICOS.get(porta, "Desconhecido")
         print(f"[+] Porta {porta}/tcp OPEN - Serviço: {serviço}")
 
-# Função para realizar o scan de portas em um alvo específico
+# Função para informar os dados de um alvo para realizar o scan
 def scan():
     alvo = input("Digite o IP do alvo: ")
 
     portas = range(1, 65536)
 
     print("Iniciando o scan...")
-# With
+# Informa o limite maximo e threads para o scan de uma porta.
     with ThreadPoolExecutor(max_workers=100) as executor:
         for porta in portas:
             executor.submit(scan_porta, alvo, porta)
