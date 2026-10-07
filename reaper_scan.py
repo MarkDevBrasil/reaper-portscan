@@ -10,8 +10,6 @@
 
 # Serviços Pre-Configurados (Nome de portas especificas)
 
-import argparse
-
 SERVICOS = {
     21: "FTP",
     22: "SSH",
@@ -31,6 +29,7 @@ SERVICOS = {
 # Bibliotecas
 import socket
 from concurrent.futures import ThreadPoolExecutor
+import argparse
 
 # Função para escanear uma porta específica em um alvo
 def scan_porta(alvo, porta):
