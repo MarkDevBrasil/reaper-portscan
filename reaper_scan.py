@@ -8,7 +8,10 @@
 # Made By MarkDevBrasil
 # My GitHub: https://github.com/MarkDevBrasil
 
-# Serviços Pre-Configurados (Nome de portas especificas
+# Serviços Pre-Configurados (Nome de portas especificas)
+
+import argparse
+
 SERVICOS = {
     21: "FTP",
     22: "SSH",
@@ -39,10 +42,21 @@ def scan_porta(alvo, porta):
     if resultado == 0:
         serviço = SERVICOS.get(porta, "Desconhecido")
         print(f" Porta {porta}/tcp ABERTA - Serviço: {serviço}")
+# Argumentos
+parser = argparse.ArgumentParser(
+    description="REAPER PORT SCANNER"
+)
+# Adicionar novos argumentos
+parser.add_argument(
+    "alvo",
+    help="Ip ou dominio do alvo"
+)
+
+args = parser.parse_args()
 
 # Função para informar os dados de um alvo para realizar o scan
 def scan():
-    alvo = input("Digite o IP do alvo: ")
+    alvo = args.alvo
 
     portas = range(1, 65536)
 
@@ -55,4 +69,7 @@ def scan():
     print("Scan finalizado")
 
 # Iniciar o codigo
+
+
+
 scan()
