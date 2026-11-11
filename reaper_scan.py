@@ -119,9 +119,9 @@ args = parser.parse_args()
 def scan():
     alvo = args.alvo
     timeout = args.timeout
-
+    # define as portas a serem escaneadas, caso não seja especificada uma porta, ele varre todas as portas
     portas = range(1, 65536)
-
+   
     if args.porta:
         portas = range(args.porta, args.porta + 1)
 
@@ -130,6 +130,7 @@ def scan():
 # Informa o limite maximo e threads para o scan de uma porta
     with ThreadPoolExecutor(max_workers=100) as executor:
         for porta in portas:
+            # informa que a porta é UDP e chama a função scan_porta_udp
             executor.submit(scan_porta, alvo, porta, timeout)
 
         for porta in portas:
@@ -141,8 +142,5 @@ def scan():
 
     print("Scan finalizado")
 
-# Iniciar o codigo
-
+# Chamando a função
 scan()
-
-
